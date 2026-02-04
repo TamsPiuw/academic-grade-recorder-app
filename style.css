@@ -1,0 +1,468 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-color: #f3f4f6;
+    --secondary-text: #1f2937;
+    --bg-color: #f9fafb;
+    --card-bg: #ffffff;
+    --text-color: #111827;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--secondary-text);
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--secondary-text);
+    margin-top: 12px;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+/* Stats Section */
+.stats-card {
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+}
+
+.stats-card h3 {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.average-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.stats-card .btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.stats-card .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Filter */
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    background-color: white;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+/* List Styles */
+.grade-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.grade-item {
+    background: white;
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.grade-info h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.grade-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.grade-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.score-badge {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.btn-delete {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fee2e2;
+    color: #991b1b;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.status-success {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-fail {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Chart Styles */
+.chart-row {
+    margin-bottom: 12px;
+}
+
+.chart-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+}
+
+.chart-bar-bg {
+    height: 10px;
+    background-color: #f3f4f6;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.chart-bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.chart-target-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--text-muted);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+/* Radar Chart Styles */
+.radar-section {
+    text-align: center;
+}
+
+.radar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#radarChart {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+.radar-grid {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 1;
+}
+
+.radar-axis {
+    stroke: var(--border-color);
+    stroke-width: 1;
+    stroke-dasharray: 4, 4;
+}
+
+.radar-label {
+    font-size: 11px;
+    fill: var(--text-color);
+    font-weight: 600;
+}
+
+
+.radar-polygon {
+    fill: url(#radarGradient);
+    stroke: var(--primary-color);
+    stroke-width: 2;
+    opacity: 0;
+    animation: fadeInPolygon 0.6s ease-out forwards;
+}
+
+@keyframes fadeInPolygon {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.radar-point {
+    stroke: white;
+    stroke-width: 2;
+    transition: r 0.2s ease;
+}
+
+.radar-point.success {
+    fill: var(--primary-color);
+}
+
+.radar-point.fail {
+    fill: var(--danger-color);
+}
+
+.radar-point:hover {
+    r: 7;
+}
+
+/* Radar Legend */
+.radar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.radar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-dot.success {
+    background-color: var(--primary-color);
+}
+
+.legend-dot.fail {
+    background-color: var(--danger-color);
+}
+
+.legend-text {
+    font-weight: 500;
+}
+
+/* Radar Chart Tooltip */
+.radar-tooltip {
+    position: absolute;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    min-width: 120px;
+}
+
+.radar-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tooltip-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+}
+
+.tooltip-score {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-bottom: 2px;
+}
+
+.tooltip-score strong {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.tooltip-target {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.tooltip-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.tooltip-status.success {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.tooltip-status.fail {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
